@@ -12,9 +12,19 @@ app.use(express.static('public'))
 const io = socket(server)
 
 io.on('connection', (socket) => {
-  console.log(socket.id)
+  console.log('SOCKET ID: ', socket.id)
+
   socket.on('chat', (data) => {
     console.log('DATA: ', data)
     io.sockets.emit('chat', data)
+  })
+
+  socket.on('typing', (data) => {
+    console.log('DATA: ', data)
+    socket.broadcast.emit('typing', data)
+  })
+
+  socket.on('nottyping', () => {
+    socket.broadcast.emit('nottyping')
   })
 })
