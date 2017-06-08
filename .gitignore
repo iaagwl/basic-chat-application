@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-node_modules/
-=======
+.sass-cache/
+
 # Logs
 logs
 *.log
@@ -59,5 +58,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
->>>>>>> 829a22468bef162db4e68ee11db64dcefffa9748
