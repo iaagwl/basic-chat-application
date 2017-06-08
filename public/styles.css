@@ -1,29 +1,43 @@
 * {
-  color: #fff; }
+  color: #525251; }
 
 body {
-  font-family: "Nunito"; }
-  body:after {
-    content: "";
-    position: fixed;
-    top: 0;
-    height: 100vh;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    background: #252525 url(/images/rob_bye.jpg) center center no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; }
+  margin: 0;
+  font-family: "Open Sans";
+  font-weight: lighter;
+  background: #252525 url(/images/gabriel.jpg) fixed no-repeat;
+  background-size: cover;
+  height: 100vh; }
 
-#wrapper {
+.hide {
+  display: none !important; }
+
+#chat-container {
   position: relative;
+  top: 50%;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: -340px;
   max-width: 600px;
-  margin: 30px auto;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.1);
   border-radius: 2px;
-  background: rgba(0, 0, 0, 0.25); }
+  background: inherit;
+  z-index: 1;
+  overflow: hidden;
+  padding: 2rem;
+  box-sizing: border-box; }
+  #chat-container::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    box-shadow: inset 0 0 0px 3000px rgba(255, 255, 255, 0.5);
+    filter: blur(10px);
+    margin: -20px; }
 
 #chat {
   display: flex;
@@ -37,11 +51,14 @@ body {
 #output p {
   padding: 12px 4px;
   margin: 0 20px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  border-bottom: 1px solid rgba(82, 82, 81, 0.2); }
 
 #feedback p {
   padding: 14px 0px;
   margin: 0 20px; }
+
+#output strong {
+  font-weight: normal; }
 
 label {
   box-sizing: border-box;
@@ -49,32 +66,103 @@ label {
   padding: 10px 20px; }
 
 input {
-  outline-color: rgba(0, 0, 0, 0.25);
+  outline-color: rgba(82, 82, 81, 0.3);
   padding: 10px 20px;
   box-sizing: border-box;
   border: 0;
   display: block;
   width: 100%;
   background: transparent;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  font-family: Nunito;
+  border-bottom: 1px solid rgba(82, 82, 81, 0.2);
   font-size: 16px; }
   input::placeholder {
-    color: #ddd; }
+    color: #727271; }
   input:first-child {
-    border-top: 1px solid rgba(0, 0, 0, 0.2); }
+    border-top: 1px solid rgba(82, 82, 81, 0.2); }
 
 button {
-  background: rgba(0, 0, 0, 0.2);
+  outline: none;
+  color: #fff;
+  background: rgba(82, 82, 81, 0.8);
   font-size: 18px;
   border: 0;
   padding: 12px 0;
   width: 100%;
-  border-radius: 0 0 2px 2px;
+  border-radius: 2px;
   cursor: pointer;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin-top: 20px; }
 
 button:active {
-  background: rgba(0, 0, 0, 0.25); }
+  background: rgba(82, 82, 81, 0.95); }
+
+#clock-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: -150px;
+  display: flex;
+  width: 600px;
+  height: 250px;
+  justify-content: space-around;
+  align-items: center; }
+  #clock-container span {
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 150px; }
+  #clock-container #hours-container {
+    padding-right: 1px;
+    border-right: 1px solid #fff;
+    flex: auto; }
+  #clock-container #minutes-container {
+    flex: auto; }
+  #clock-container .time-item {
+    width: auto;
+    text-align: center; }
+
+span#time-label {
+  display: block;
+  font-size: 35px; }
+
+#start-button {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  margin-left: -125px;
+  margin-top: -50px;
+  width: 250px;
+  height: 100px;
+  display: flex;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.1);
+  border-radius: 2px;
+  background: inherit;
+  z-index: 1;
+  overflow: hidden;
+  padding: 2rem;
+  box-sizing: border-box; }
+  #start-button::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    box-shadow: inset 0 0 0px 3000px rgba(255, 255, 255, 0.5);
+    filter: blur(5px);
+    margin: -20px; }
+  #start-button:hover::before {
+    box-shadow: inset 0 0 0px 3000px rgba(255, 255, 255, 0.6); }
+  #start-button span {
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    display: block;
+    flex: auto; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -9,11 +9,23 @@
   <title>Chat App</title>
 </head>
 <body>
-  <div id="wrapper">
+  <div id="start-button"><span>Get Started</span></div>
+  <div id="clock-container">
+    <div id="hours-container">
+      <div class="time-item">
+        <span id="hours"></span>
+        <span id="time-label">hours</label>
+      </div>
+    </div>
+    <div id="minutes-container">
+      <div class="time-item">
+        <span id="minutes"></span>
+        <span id="time-label">minutes</label>
+      </div>
+    </div>
+  </div>
+  <div id="chat-container" class="hide">
     <div id="chat">
-      <!-- <div id="chat-rooms">
-        <div id="room-one">Room 1</div>
-      </div> -->
       <div id="chat-window">
         <div id="output"></div>
         <div id="feedback"></div>
@@ -26,7 +38,7 @@
     </form>
   </div>
 
-
+  <script src="/clock.js"></script>
   <script src="/chat.js"></script>
 </body>
 </html>
