@@ -2,17 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.2/socket.io.js"></script>
   <link rel="stylesheet" href="/styles.css">
-  <title>Document</title>
+  <title>Chat App</title>
 </head>
 <body>
-  <div id="mario-chat">
-    <div id="chat-window">
-      <div id="output"></div>
-      <div id="feedback"></div>
+  <div id="wrapper">
+    <div id="chat">
+      <!-- <div id="chat-rooms">
+        <div id="room-one">Room 1</div>
+      </div> -->
+      <div id="chat-window">
+        <div id="output"></div>
+        <div id="feedback"></div>
+      </div>
     </div>
     <form id="chat-input">
       <input type="text" placeholder="Handle" id="handle" autocomplete="off">

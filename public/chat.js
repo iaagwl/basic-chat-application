@@ -31,6 +31,7 @@ message.addEventListener('keyup', () => {
 // listen for events
 socket.on('chat', (data) => {
   output.innerHTML += '<p><strong>' + data.handle + ': </strong>' + data.message + '</p>'
+  feedback.innerHTML = ''
 })
 
 socket.on('typing', (data) => {
