@@ -3,18 +3,18 @@ const socket = io.connect('http://localhost:4000')
 
 // dom queries
 const message = document.getElementById('message'),
-      handle = document.getElementById('handle'),
       output = document.getElementById('output'),
       input = document.getElementById('chat-input'),
-      feedback = document.getElementById('feedback')
+      feedback = document.getElementById('feedback'),
+      usersList = document.getElementById('users-list')
 
 // emit events
 input.addEventListener('submit', (e) => {
   e.preventDefault()
-  if (message.value && handle.value){
+  if (message.value && socket.username){
     socket.emit('chat', {
       message: message.value,
-      handle: handle.value
+      handle: socket.username
     })
     message.value = ''
   }
@@ -22,7 +22,7 @@ input.addEventListener('submit', (e) => {
 
 message.addEventListener('keyup', () => {
   if (message.value) {
-    socket.emit('typing', handle.value)
+    socket.emit('typing', socket.username)
   } else {
     socket.emit('nottyping')
   }
@@ -38,6 +38,9 @@ socket.on('typing', (data) => {
   feedback.innerHTML = '<p><em>' + data + ' is typing a message...</em></p>'
 })
 
-socket.on('nottyping', () => {
-  feedback.innerHTML = ''
+socket.on('get users', (data) => {
+  let html = data.map((user) => {
+    return '<li class="online-user">'+user+'</li>'
+  }).join('')
+  usersList.innerHTML = html
 })

@@ -25,6 +25,9 @@
       </div>
     </div>
   </div>
+  <form id="user-input">
+    <input type="text" id="user" autocomplete="off" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" />
+  </form>
   <div id="chat-container" class="hide">
     <div id="chat">
       <div id="chat-window">
@@ -33,10 +36,15 @@
       </div>
     </div>
     <form id="chat-input">
-      <input type="text" placeholder="Name" id="handle" autocomplete="off">
+      <label id="active-user"></label>
       <input type="text" placeholder="Message" id="message" autocomplete="off">
       <button id="send">Send</button>
     </form>
+  </div>
+
+  <div id="online-users" class="hide">
+    <h2>Online Users</h2>
+    <ul id="users-list"></ul>
   </div>
 
   <svg height="0">
